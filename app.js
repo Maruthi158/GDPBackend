@@ -20,8 +20,9 @@ mongoose.connect(uri).then(() => {
     console.log("connection successfull...")
 }).catch((err) => console.log("connection error : ", err))
 
-app.post("/",(req,res)=>{
+app.get("/",(req,res)=>{
     res.send("Hello worlf")
+    console.log("jeevan")
 }
 )
 app.post('/login', async(req,res)=>{
@@ -65,4 +66,4 @@ app.post('/signup', async (req, res) => {
     }
 })
 
-app.listen(3000, console.log("server is ready to run on 3300..."))
+app.listen(process.env.PORT || 3000, console.log("server is ready to run on 3000..."))
