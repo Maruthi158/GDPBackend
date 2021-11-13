@@ -3,8 +3,13 @@ const app = express()
 const bcrypt = require('bcrypt')
 const mongoose = require('mongoose')
 const collection = require('./collection')
-
+const cors=require("cors")
 app.use(express.json());
+app.use(cors({
+    origin: "*",
+    methods: "GET,PUT,POST,DELETE",
+    credentials:true
+}))
 app.use(
     express.urlencoded({
         extended: false,
@@ -66,4 +71,4 @@ app.post('/signup', async (req, res) => {
     }
 })
 
-app.listen(process.env.PORT || 3000, console.log("server is ready to run on 3000..."))
+app.listen(process.env.PORT || 3300, console.log("server is ready to run on 3000..."))
