@@ -20,6 +20,10 @@ mongoose.connect(uri).then(() => {
     console.log("connection successfull...")
 }).catch((err) => console.log("connection error : ", err))
 
+app.post("/",(req,res)=>{
+    res.send("Hello worlf")
+}
+)
 app.post('/login', async(req,res)=>{
     try {
         const { email, password } = req.body;
