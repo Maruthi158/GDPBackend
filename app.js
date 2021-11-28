@@ -45,6 +45,7 @@ app.get('/auth', async (req, res) => {
     }
 })
 
+
 app.get('/fetchData', Authentication, async (req, res) => {
     try {
         const user = req.user;
