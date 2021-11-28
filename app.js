@@ -97,6 +97,7 @@ app.post('/login', async (req, res) => {
     }
 })
 
+//Adding changed signup code
 app.post('/signup', async (req, res) => {
     try {
         const { fname, mname, lname, sid, email, mobile, bod, password } = req.body;
@@ -132,6 +133,8 @@ app.post('/signup', async (req, res) => {
         res.status(400).send(err);
     }
 })
+
+
 
 
 //Adding file storage from user
