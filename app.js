@@ -164,4 +164,4 @@ app.post("/course", upload.single("file"), async (req, res) => {
     }
 })
 
-app.listen(3300, console.log("server is ready to run on 3300..."))
+app.listen(process.env.PORT || 3300,  console.log("server is ready to run on 3300..."))
