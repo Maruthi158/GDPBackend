@@ -133,6 +133,8 @@ app.post('/signup', async (req, res) => {
     }
 })
 
+
+//Adding file storage from user
 const fileStorageEngine = multer.diskStorage({
     destination: (req, file, cb) => {
         cb(null, "./storage/")
