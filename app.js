@@ -70,7 +70,7 @@ app.get('/dashboard', Authentication, async (req, res) => {
 })
 
 
-
+//Adding changed login backend API Call
 app.post('/login', async (req, res) => {
     try {
         const { email, password } = req.body;
@@ -78,7 +78,7 @@ app.post('/login', async (req, res) => {
         const result1 = await bcrypt.compare(password, result.password)
         if (result1) {
 
-            // Generating token using jwt for testing purpose
+            // we are genrating token
             token = jwt.sign({ _id: result._id }, "BearcatStudyBuddyProject");
             result.token = token;
             await result.save();
@@ -90,7 +90,7 @@ app.post('/login', async (req, res) => {
 
             res.json({ success: 1 })
         } else {
-            res.json({ success: 0, error: "password or the  username is wrong" })
+            res.json({ success: 0, error: "password or username is wrong" })
         }
     } catch (err) {
         console.log(err)
