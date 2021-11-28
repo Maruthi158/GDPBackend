@@ -8,11 +8,17 @@ const jwt = require('jsonwebtoken')
 const course = require('./corse_collection')
 const multer = require('multer')
 const fs = require('fs')
+const cors=require("cors")
 const Authentication = require('./methods/authentication')
 let token;
 
 app.use(cookieParser())
 app.use(express.json());
+app.use(cors({
+    origin: "*",
+    methods: "GET,PUT,POST,DELETE",
+    credentials:true
+}))
 app.use(
     express.urlencoded({
         extended: false,
