@@ -19,7 +19,9 @@ app.use(
     })
 );
 
-const uri = "mongodb://localhost:27017/studdy";
+//const uri = "mongodb://localhost:27017/studdy";
+
+const uri="mongodb+srv://Maruthi158:Jethin%401227@cluster0.amapl.mongodb.net/GDP1?retryWrites=true&w=majority";
 
 mongoose.connect(uri).then(() => {
     console.log("connection successfull...")
