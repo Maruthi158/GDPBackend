@@ -10,3 +10,7 @@ const courseSchema = new mongoose.Schema({
         required:true
     }
 })
+
+const course = new mongoose.model("courses",courseSchema);
+
+module.exports = course
