@@ -18,6 +18,9 @@ try {
             next()
           
         }
+        } catch (err) {
+        console.log(err)
+    }
   
   
 }
