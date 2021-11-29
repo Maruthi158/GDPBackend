@@ -2,9 +2,11 @@ const mongoose = require('mongoose')
 
 const courseSchema = new mongoose.Schema({
     email:{
-        type:String
+        type:String,
+        required:true
     },
     path:{
-        type:String
+        type:String,
+        required:true
     }
 })
