@@ -33,6 +33,11 @@ mongoose.connect(uri).then(() => {
     console.log("connection successfull...")
 }).catch((err) => console.log("connection error : ", err))
 
+app.get('/', async (req, res) => {
+    res.send("Hello world")
+    }
+)
+
 app.get('/auth', async (req, res) => {
     if (typeof (req.cookies.jwtToken) !== "undefined") {
         const cookie = req.cookies.jwtToken;
