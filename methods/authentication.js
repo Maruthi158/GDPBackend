@@ -8,6 +8,9 @@ try {
             res.json({success:0})
         }else {
           const cookieToken = req.cookies.jwtToken;
+          const verifyToken = jwt.verify(cookieToken, "BearcatStudyBuddyProject")
+
+          const verifyUser = await user.findOne({ _id: verifyToken._id, token: cookieToken })      
           
         }
   
